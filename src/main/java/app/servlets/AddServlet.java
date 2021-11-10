@@ -1,5 +1,8 @@
 package app.servlets;
 
+import app.entities.Product;
+import app.model.Model;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -17,5 +20,14 @@ public class AddServlet extends HttpServlet {
 
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/add.jsp");
         requestDispatcher.forward(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String name = req.getParameter("name");
+        int price = Integer.parseInt(req.getParameter("price"));
+        Product product = new Product(name, price);
+        Model model = Model.getInstance();
+        model.add(product);
     }
 }

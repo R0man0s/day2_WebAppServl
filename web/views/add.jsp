@@ -13,4 +13,16 @@
 <body>
 <h1>add.jsp</h1>
 </body>
+
+<form method="post">
+    <label>Name:
+        <input type="text" name="name"><br />
+    </label>
+
+    <label>Password:
+        <input type="number" name="price"><br />
+    </label>
+    <button type="submit">Submit</button>
+</form>
+
 </html>
