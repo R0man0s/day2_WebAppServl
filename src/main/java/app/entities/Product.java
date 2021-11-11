@@ -1,11 +1,14 @@
 package app.entities;
 
+import app.enums.Products_status;
+
 import java.util.Objects;
 
 public class Product {
     private int id;
     private String name;
     private int price;
+    private Products_status status;
     private String created;
 
     public Product() {
@@ -17,10 +20,11 @@ public class Product {
         this.price = price;
     }
 
-    public Product(int id, String name, int price, String created) {
+    public Product(int id, String name, int price, Products_status status, String created) {
         this.id = id;
         this.name = name;
         this.price = price;
+        this.status = status;
         this.created = created;
     }
 
@@ -48,6 +52,14 @@ public class Product {
         this.price = price;
     }
 
+    public Products_status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Products_status status) {
+        this.status = status;
+    }
+
     public String getCreated() {
         return created;
     }
@@ -59,9 +71,10 @@ public class Product {
     @Override
     public String toString() {
         return "Product{" +
-                "id=" + id +
+                "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", price=" + price +
+                ", price='" + price + '\'' +
+                ", status='" + status + '\'' +
                 ", created='" + created + '\'' +
                 '}';
     }

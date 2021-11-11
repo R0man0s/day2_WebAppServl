@@ -1,5 +1,6 @@
 package app.servlets;
 
+import app.controller.Controller;
 import app.model.Model;
 
 import javax.servlet.RequestDispatcher;
@@ -17,9 +18,12 @@ public class ListServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        PrintWriter writer = resp.getWriter();
 //        writer.println("Method GET from ListServlet");
-        Model model = Model.getInstance();
-        List<String> names = model.list();
-        req.setAttribute("productNames", names);
+        //Model model = Model.getInstance();
+        //List<String> names = model.list();
+
+        //req.setAttribute("productNames", names);
+
+        req.setAttribute("productNames", Controller.GetAllProductsViews());
 
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/list.jsp");
         requestDispatcher.forward(req, resp);
