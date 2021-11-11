@@ -14,7 +14,7 @@
 
 <body>
 <div>
-    <h1>Simple purchases!</h1>
+    <h1>Simple purchases app!</h1>
 </div>
 
 <div>
@@ -32,6 +32,7 @@
                 }
                 out.println("</ui>");
             } else out.println("<p>There are no products yet!</p>");
+
         %>
     </div>
 </div>
