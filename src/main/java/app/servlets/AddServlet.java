@@ -29,5 +29,8 @@ public class AddServlet extends HttpServlet {
         Product product = new Product(name, price);
         Model model = Model.getInstance();
         model.add(product);
+
+        req.setAttribute("productName", name);
+        doGet(req, resp);
     }
 }
