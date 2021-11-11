@@ -8,9 +8,39 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Add product</title>
+    <title>Add new product</title>
 </head>
+
 <body>
-<h1>add.jsp</h1>
+<div>
+    <h1>Simple purchases app!</h1>
+</div>
+
+<div>
+    <%
+        if (request.getAttribute("productName") != null) {
+            out.println("<p>Product '" + request.getAttribute("productName") + "' added!</p>");
+        }
+    %>
+    <div>
+        <div>
+            <h2>Add product</h2>
+        </div>
+
+        <form method="post">
+            <label>Name:
+                <input type="text" name="name"><br />
+            </label>
+            <label>Price:
+                <input type="number" name="price"><br />
+            </label>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+<div>
+    <button onclick="location.href='/'">Back to main</button>
+</div>
 </body>
 </html>
